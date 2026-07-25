@@ -33,7 +33,6 @@ const config = {
   projectName: 'SharedCourses', // Usually your repo name.
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -76,11 +75,7 @@ const config = {
           editUrl:
             'https://github.com/BetterECNU/SharedCourses/tree/main',
         },
-        blog: {
-          blogTitle: 'ECNU·课栈博客',
-          blogDescription: '分享生涯经验, 发布项目动态',
-          postsPerPage: 'ALL',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -113,7 +108,7 @@ const config = {
           { to: '/docs/', label: '课栈', position: 'left' },
           { to: '/docs/undergraduate/', label: '本科生院', position: 'left' },
           { to: '/docs/postgraduate/', label: '研究生院', position: 'left' },
-          { to: 'blog', label: '博客', position: 'right' },
+
           {
             href: 'https://github.com/BetterECNU/SharedCourses',
             label: 'GitHub',
@@ -147,10 +142,7 @@ const config = {
                 label: 'QQ 群聊',
                 href: 'https://qm.qq.com/q/ARnu9JwBfq',
               },
-              {
-                label: '博客',
-                to: '/blog',
-              }
+
             ],
           },
           {
@@ -179,6 +171,9 @@ const config = {
   // 具体信息请参考http://docusaurus.io/docs/next/markdown-features/diagrams
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
 };
 
